@@ -8,6 +8,8 @@ body{
     text-align: center;
 }
 
+
+
 .score{
     display: flex;
     justify-content: center;
@@ -16,12 +18,36 @@ body{
     margin-top: 2rem;
     font-size: 1.5rem;
 }
-#nida-score, #soha-score{
+#one-score, #two-score{
     font-size: 2rem;
 }
 
+.con{
+    display: flex;
+    align-items: center;
+}
+.con1{
+    margin-right: 30vh;
+    margin-left: 30vh;
+}
+
+#update{
+    margin-top: 1vh;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+}
+
+#name-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 20vh;
+}
+
 .container{
-    height: 45vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,8 +58,8 @@ h1{
 }
 
 .game{
-    height: 40vh;
-    width: 40vh;
+    height: 60vh;
+    width: 60vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -42,8 +68,8 @@ h1{
 }
 
 .box{
-    height: 12vh;
-    width: 12vh;
+    height: 18vh;
+    width: 18vh;
     border-radius: 1rem;
     border: none;
     font-size: 7.5vh;
@@ -70,12 +96,45 @@ h1{
 }
 
 #msg, #your-turn{
-    height: 1.25rem;
-    margin: auto;
+    height: 1.25vh;
     color: rgb(12, 54, 54);
-    font-size: 1rem;
+    font-size: 5vh;
+}
+.msg-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .hide{
     display: none;
+}
+@media(max-width: 500px){
+    .con{
+        flex-direction: column;
+    }
+    .con1{
+        margin: auto;
+        margin-top: 4vh;
+    }
+    .container{
+        height: 45vh;
+    }
+    .game{
+        height: 40vh;
+        width: 40vh;
+    }
+    .box{
+        height: 12vh;
+        width: 12vh;
+    }
+    #new-game{
+        margin-top: 35px;
+    }
+    #your-turn{
+        font-size: 3vh;
+    }
 }
