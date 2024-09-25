@@ -12,37 +12,54 @@
         <button id="new-game">New Game</button>
     </div>
     <div class="turn">
-        <p id="your-turn">Looser start the Game</p>
-    </div>
-    
-    <div class="score">
-        <div>
-            <p id="nida-score">0</p>
-            <p>Nida</p>
-        </div>
-        <div>
-            <p id="soha-score">0</p>
-            <p>Soha</p>
-        </div>
+        <p id="your-turn">Player1 start the Game</p>
     </div>
 
-    <main>
-        <h1>Tic Tac Toe</h1>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
+    <div class="con">
+        <div class="con1">
+            <form id="name-form">
+                <label for="player1">Name 1(O)</label>
+                <input type="text" id="player1" name="player1">
+
+                <label for="player2">Name 2(X)</label>
+                <input type="text" id="player2" name="player2">
+
+                <button type="button" id="update">update Names</button>
+            </form>
         </div>
-        <button id="reset">Reset Game</button>
-    </main>
+    
+        <div class="con2">
+            <div class="score">
+                <div>
+                    <p id="one-score">0</p>
+                    <p id="name1">Player1</p>
+                </div>
+                <div>
+                    <p id="two-score">0</p>
+                    <p id="name2">Player2</p>
+                </div>
+            </div>
+        
+
+            <main>
+                <h1>Tic Tac Toe</h1>
+                <div class="container">
+                    <div class="game">
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                        <button class="box"></button>
+                    </div>
+                </div>
+                <button id="reset">Reset Game</button>
+            </main>
+        </div>
+    </div>
     <script src="file.js"></script>
 </body>
 </html> 
