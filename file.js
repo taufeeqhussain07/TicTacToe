@@ -1,13 +1,16 @@
-let nidaScore = 0;
-let sohaScore = 0;
+let oneScore = 0;
+let twoScore = 0;
+let player1Name = 'Player 1';
+let player2Name = 'Player 2';
 
 let boxes =document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
+let updateName = document.querySelector("#update");
 let newGameBtn = document.querySelector("#new-game");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
-let score1 = document.querySelector("#nida-score");
-let score2 = document.querySelector("#soha-score");
+let score1 = document.querySelector("#one-score");
+let score2 = document.querySelector("#two-score");
 let yourTurn = document.querySelector("#your-turn");
 
 let turnO = true;
@@ -21,22 +24,30 @@ let win=[
     [3, 4, 5],
     [6, 7, 8]
 ];
+const updateNames = () => {
+    player1Name = document.getElementById('player1').value;
+    player2Name = document.getElementById('player2').value;
+
+    document.getElementById('name1').innerText = player1Name;
+    document.getElementById('name2').innerText = player2Name;
+    yourTurn.innerText = ` ${player1Name}'s Turn`;
+}
 const resetGame = () => {
     for(let box of boxes){
         box.disabled = false;
         box.innerText = "";
         msgContainer.classList.add("hide");
     }
-};
+}; 
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if(turnO){
-            yourTurn.innerText = "Soha's Turn";
+            yourTurn.innerText = ` ${player2Name}'s Turn`;
             box.innerText="O";
             turnO = false;
         }else{
-            yourTurn.innerText = "Nida's Turn";
+            yourTurn.innerText = `${player1Name}'s Turn`;
             box.innerText = "X";
             turnO = true;
         }
@@ -59,18 +70,19 @@ const checkWinner = () => {
 
         if(pos1Val != "" && pos2Val != "" && pos3Val != ""){
             if(pos1Val === pos2Val && pos2Val === pos3Val && pos3Val==="O"){
-                nidaScore++;
-                score1.innerText = nidaScore;
+                oneScore++;
+                score1.innerText = oneScore;
                 showWinner(pos1Val);
             }
             else if(pos1Val === pos2Val && pos2Val === pos3Val && pos3Val==="X"){
-                sohaScore++;
-                score2.innerText = sohaScore;
+                twoScore++;
+                score2.innerText = twoScore;
                 showWinner(pos1Val);
             }
         }
     }
 };
 
+updateName.addEventListener("click", updateNames);
 newGameBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
